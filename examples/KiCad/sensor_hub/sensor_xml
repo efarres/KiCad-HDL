@@ -1,0 +1,326 @@
+-- --------------------------------------------------------------------
+-- Date: 19/12/2014 14:09:43
+-- --------------------------------------------------------------------
+-- Tool: "eeschema (2013-07-07 BZR 4022)-stable
+-- --------------------------------------------------------------------
+-- File: C:\Users\Esteve\Documents\PCB\sensor_hub\sensor_hub.sch
+-- --------------------------------------------------------------------
+-- Interfaces:
+--      - Wishbone B4 complaint
+--      - Altera Avalon Interface complaint
+--
+-- Module implements:
+--      -
+--      -
+-- --------------------------------------------------------------------
+-- Author:
+--      PhD. Esteve Farres Berenguer
+--      C / Can Planes, 6
+--      ES17160 - Anglès - Girona
+--      Catalonia - Spain
+--
+-- Contact:
+--      mobile: +34 659 17 59 69
+--      web: https://plus.google.com/+EsteveFarresBerenguer/posts
+--      email: esteve.farres@gmail.com
+--
+-- --------------------------------------------------------------------
+-- Code Revision History :
+--      -
+-- --------------------------------------------------------------------
+-- Ver: | Author |Mod. Date   |Changes Made:
+-- V1.0 | E.F.B. | YYYY/MM/DD | Initial ver
+-- --------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity C:\Users\Esteve\Documents\PCB\sensor_hub\sensor_hub.sch is
+    port (
+    );
+
+architecture rtl of C:\Users\Esteve\Documents\PCB\sensor_hub\sensor_hub.sch is
+
+    -- Components 
+
+    component avalon_st_sink_to_wb_df_master_pipelined
+
+ (pin 1) clk : 
+ (pin 2) reset_n : 
+ (pin 3) st_sink_valid : 
+ (pin 4) st_sink_data : 
+ (pin 5) st_sink_ready : 
+ (pin 6) CYC_O : 
+ (pin 7) WE_O : 
+ (pin 8) SEL_O : 
+ (pin 9) STB_O : 
+ (pin 10) DAT_O : 
+ (pin 11) ACK_I : 
+ (pin 12) STALL_I : 
+    );
+
+    component wb_df_slave_to_avalon_st_src
+
+ (pin 1) clk : 
+ (pin 2) reset_n : 
+ (pin 3) CYC_I : 
+ (pin 4) WE_I : 
+ (pin 5) SEL_I : 
+ (pin 6) STB_I : 
+ (pin 7) DAT_I : 
+ (pin 8) ACK_O : 
+ (pin 9) st_src_valid : 
+ (pin 10) st_src_data : 
+ (pin 11) st_src_ready : 
+    );
+
+    component st_bytes_to_am
+
+ (pin 1) clk : 
+ (pin 2) reset_n : 
+ (pin 3) in_valid : 
+ (pin 4) in_data : 
+ (pin 5) in_ready : 
+ (pin 6) out_valid : 
+ (pin 7) out_data : 
+ (pin 8) out_ready : 
+ (pin 9) am_address : 
+ (pin 10) am_read : 
+ (pin 11) am_write : 
+ (pin 12) am_byteenable : 
+ (pin 13) am_writedata : 
+ (pin 14) am_readdata : 
+ (pin 15) am_waitrequest : 
+ (pin 16) am_readdatavalid : 
+    );
+
+    component uart_core
+
+ (pin 1) CLK : 
+ (pin 2) RESET : 
+ (pin 3) SIN : 
+ (pin 4) SOUT : 
+ (pin 5) INTR : 
+ (pin 6) UART_CYC_I : 
+ (pin 7) UART_WE_I : 
+ (pin 8) UART_SEL_I : 
+ (pin 9) UART_STB_I : 
+ (pin 10) UART_ADR_I : 
+ (pin 11) UART_DAT_I : 
+ (pin 12) UART_DAT_O : 
+ (pin 13) UART_ACK_O : 
+ (pin 14) UART_CTI_I : 
+ (pin 15) UART_BTE_I : 
+ (pin 16) RXDRY_N : 
+ (pin 17) TXRDY_N : 
+    );
+
+    component uart_core_to_wb_df
+
+ (pin 1) CLK : 
+ (pin 2) RESET : 
+ (pin 3) UART_CYC_0 : 
+ (pin 4) UART_WE_O : 
+ (pin 5) UART_SEL_O : 
+ (pin 6) UART_STB_O : 
+ (pin 7) UART_ADR_O : 
+ (pin 8) UART_DAT_O : 
+ (pin 9) UART_DAT_I : 
+ (pin 10) UART_ACK_I : 
+ (pin 11) UART_CTI_O : 
+ (pin 12) UART_BTE_O : 
+ (pin 13) RXDRY_N : 
+ (pin 14) TXRDY_N : 
+ (pin 15) MASTER_CYC_O : 
+ (pin 16) MASTER_WE_O : 
+ (pin 17) MASTER_SEL_O : 
+ (pin 18) MASTER_STB_O : 
+ (pin 19) MASTER_DATA_O : 
+ (pin 20) MASTER_ACK_I : 
+ (pin 21) SLAVE_CYC_I : 
+ (pin 22) SLAVE_WE_I : 
+ (pin 23) SLAVE_SEL_I : 
+ (pin 24) SLAVE_STB_I : 
+ (pin 25) SLAVE_DAT_I : 
+ (pin 26) SLAVE_ACK_O : 
+ (pin 27) SLAVE_STALL_O : 
+    );
+
+    -- Signals 
+    signal N_1 : std_logic;
+    signal N_2 : std_logic;
+    signal N_3 : std_logic;
+    signal N_4 : std_logic;
+    signal N_5 : std_logic;
+    signal N_6 : std_logic;
+    signal N_7 : std_logic;
+    signal N_8 : std_logic;
+    signal N_9 : std_logic;
+    signal N_10 : std_logic;
+    signal N_11 : std_logic;
+    signal N_12 : std_logic;
+    signal N_13 : std_logic;
+    signal N_14 : std_logic;
+    signal N_15 : std_logic;
+    signal N_16 : std_logic;
+    signal N_17 : std_logic;
+    signal N_18 : std_logic;
+    signal N_19 : std_logic;
+    signal N_20 : std_logic;
+    signal N_21 : std_logic;
+    signal /SIN : std_logic;
+    signal /SOUT : std_logic;
+    signal /INTR : std_logic;
+    signal /am_read : std_logic;
+    signal /am_write : std_logic;
+    signal /am_waitrequest : std_logic;
+    signal /am_readdatavalid : std_logic;
+    signal N_33 : std_logic;
+    signal N_34 : std_logic;
+    signal N_35 : std_logic;
+    signal N_36 : std_logic;
+    signal N_37 : std_logic;
+    signal N_38 : std_logic;
+    signal N_39 : std_logic;
+    signal N_40 : std_logic;
+    signal N_41 : std_logic;
+    signal N_42 : std_logic;
+    signal N_43 : std_logic;
+    signal N_44 : std_logic;
+    signal N_45 : std_logic;
+    signal N_46 : std_logic;
+    signal N_47 : std_logic;
+    signal N_48 : std_logic;
+    signal N_49 : std_logic;
+    signal N_50 : std_logic;
+    signal N_51 : std_logic;
+    signal N_52 : std_logic;
+    signal N_53 : std_logic;
+    signal N_54 : std_logic;
+    signal N_55 : std_logic;
+    signal N_56 : std_logic;
+    signal N_57 : std_logic;
+    signal N_58 : std_logic;
+    signal N_59 : std_logic;
+    signal N_60 : std_logic;
+    signal N_61 : std_logic;
+    signal N_62 : std_logic;
+    signal N_63 : std_logic;
+
+
+begin
+    -- Instances 
+    U4 : component AVALON_ST_SINK_TO_WB_DF_MASTER_PIPELINED
+    port map(
+        6 => N_2, 
+        7 => N_3, 
+        8 => N_5, 
+        11 => N_9, 
+        12 => N_11, 
+        9 => N_17, 
+        2 => N_34, 
+        1 => N_35, 
+        3 => N_50, 
+        5 => N_51, 
+        4 => N_54, 
+        10 => N_55, 
+    );
+
+
+    U5 : component ST_BYTES_TO_AM
+    port map(
+        10 => /am_read, 
+        11 => /am_write, 
+        15 => /am_waitrequest, 
+        16 => /am_readdatavalid, 
+        12 => N_45, 
+        13 => N_46, 
+        14 => N_47, 
+        3 => N_48, 
+        5 => N_49, 
+        6 => N_50, 
+        8 => N_51, 
+        2 => N_52, 
+        1 => N_53, 
+        4 => N_56, 
+        7 => N_57, 
+        9 => N_58, 
+    );
+
+
+    U3 : component WB_DF_SLAVE_TO_AVALON_ST_SRC
+    port map(
+        4 => N_1, 
+        3 => N_7, 
+        5 => N_10, 
+        6 => N_12, 
+        9 => N_48, 
+        11 => N_49, 
+        8 => N_59, 
+        2 => N_60, 
+        1 => N_61, 
+        7 => N_62, 
+        10 => N_63, 
+    );
+
+
+    U2 : component UART_CORE_TO_WB_DF
+    port map(
+        16 => N_1, 
+        21 => N_2, 
+        22 => N_3, 
+        13 => N_4, 
+        23 => N_5, 
+        14 => N_6, 
+        15 => N_7, 
+        25 => N_8, 
+        26 => N_9, 
+        17 => N_10, 
+        27 => N_11, 
+        18 => N_12, 
+        19 => N_13, 
+        1 => N_14, 
+        2 => N_15, 
+        24 => N_17, 
+        7 => N_19, 
+        8 => N_20, 
+        9 => N_21, 
+        4 => N_33, 
+        3 => N_36, 
+        5 => N_37, 
+        6 => N_38, 
+        10 => N_42, 
+        11 => N_43, 
+        12 => N_44, 
+        20 => N_59, 
+    );
+
+
+    U1 : component UART_CORE
+    port map(
+        16 => N_4, 
+        17 => N_6, 
+        1 => N_16, 
+        2 => N_18, 
+        3 => /SIN, 
+        4 => /SOUT, 
+        5 => /INTR, 
+        7 => N_33, 
+        6 => N_36, 
+        8 => N_37, 
+        9 => N_38, 
+        10 => N_39, 
+        11 => N_40, 
+        12 => N_41, 
+        13 => N_42, 
+        14 => N_43, 
+        15 => N_44, 
+    );
+
+
+
+
+end architecture rtl;

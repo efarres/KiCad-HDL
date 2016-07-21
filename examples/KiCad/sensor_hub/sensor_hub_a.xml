@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>Z:/PCB/sensor_hub/sensor_hub.sch</source>
+    <date>15/10/2015 15:47:59</date>
+    <tool>Eeschema (2015-07-06 BZR 5891, Git 351914d)-product</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Avalon Wishbone bridges and adapters</title>
+        <company>Ubikwa Systems SLU</company>
+        <rev>A</rev>
+        <date>22 dec 2014</date>
+        <source>sensor_hub.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U4">
+      <value>AVALON_ST_SINK_TO_WB_DF_MASTER_PIPELINED</value>
+      <footprint>MODULE</footprint>
+      <datasheet>DOCUMENTATION</datasheet>
+      <libsource lib="interfaces" part="avalon_st_sink_to_wb_df_master_pipelined"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5491A2DD</tstamp>
+    </comp>
+    <comp ref="U5">
+      <value>ST_BYTES_TO_AM</value>
+      <footprint>MODULE</footprint>
+      <datasheet>DOCUMENTATION</datasheet>
+      <libsource lib="interfaces" part="st_bytes_to_am"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>54929FE9</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>WB_DF_SLAVE_TO_AVALON_ST_SRC</value>
+      <footprint>MODULE</footprint>
+      <datasheet>DOCUMENTATION</datasheet>
+      <libsource lib="interfaces" part="wb_df_slave_to_avalon_st_src"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5493F5E0</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>UART_CORE_TO_WB_DF</value>
+      <footprint>MODULE</footprint>
+      <datasheet>DOCUMENTATION</datasheet>
+      <libsource lib="interfaces" part="uart_core_to_wb_df"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>549413FD</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>UART_CORE</value>
+      <footprint>MODULE</footprint>
+      <datasheet>DOCUMENTATION</datasheet>
+      <libsource lib="interfaces" part="uart_core"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>549416C9</tstamp>
+    </comp>
+    <comp ref="U6">
+      <value>AS_TO_WB_MASTER</value>
+      <footprint>MODULE</footprint>
+      <datasheet>DOCUMENTATION</datasheet>
+      <libsource lib="interfaces" part="as_to_wb_master"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5497E623</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="interfaces" part="st_bytes_to_am">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">st_bytes_to_am</field>
+        <field name="Footprint">MODULE</field>
+        <field name="Datasheet">DOCUMENTATION</field>
+      </fields>
+      <pins>
+        <pin num="1" name="clk" type="input"/>
+        <pin num="2" name="reset_n" type="input"/>
+        <pin num="3" name="in_valid" type="input"/>
+        <pin num="4" name="in_data" type="input"/>
+        <pin num="5" name="in_ready" type="output"/>
+        <pin num="6" name="out_valid" type="input"/>
+        <pin num="7" name="out_data" type="output"/>
+        <pin num="8" name="out_ready" type="input"/>
+        <pin num="9" name="am_address" type="output"/>
+        <pin num="10" name="am_read" type="output"/>
+        <pin num="11" name="am_write" type="output"/>
+        <pin num="12" name="am_byteenable" type="output"/>
+        <pin num="13" name="am_writedata" type="output"/>
+        <pin num="14" name="am_readdata" type="input"/>
+        <pin num="15" name="am_waitrequest" type="input"/>
+        <pin num="16" name="am_readdatavalid" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="interfaces" part="uart_core">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">uart_core</field>
+        <field name="Footprint">MODULE</field>
+        <field name="Datasheet">DOCUMENTATION</field>
+      </fields>
+      <pins>
+        <pin num="1" name="CLK" type="input"/>
+        <pin num="2" name="RESET" type="input"/>
+        <pin num="3" name="SIN" type="input"/>
+        <pin num="4" name="SOUT" type="output"/>
+        <pin num="5" name="INTR" type="output"/>
+        <pin num="6" name="UART_CYC_I" type="input"/>
+        <pin num="7" name="UART_WE_I" type="input"/>
+        <pin num="8" name="UART_SEL_I" type="input"/>
+        <pin num="9" name="UART_STB_I" type="input"/>
+        <pin num="10" name="UART_ADR_I" type="input"/>
+        <pin num="11" name="UART_DAT_I" type="input"/>
+        <pin num="12" name="UART_DAT_O" type="output"/>
+        <pin num="13" name="UART_ACK_O" type="output"/>
+        <pin num="14" name="UART_CTI_I" type="input"/>
+        <pin num="15" name="UART_BTE_I" type="input"/>
+        <pin num="16" name="RXDRY_N" type="output"/>
+        <pin num="17" name="TXRDY_N" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="interfaces" part="uart_core_to_wb_df">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">uart_core_to_wb_df</field>
+        <field name="Footprint">MODULE</field>
+        <field name="Datasheet">DOCUMENTATION</field>
+      </fields>
+      <pins>
+        <pin num="1" name="CLK" type="input"/>
+        <pin num="2" name="RESET" type="input"/>
+        <pin num="3" name="UART_CYC_0" type="output"/>
+        <pin num="4" name="UART_WE_O" type="output"/>
+        <pin num="5" name="UART_SEL_O" type="output"/>
+        <pin num="6" name="UART_STB_O" type="output"/>
+        <pin num="7" name="UART_ADR_O" type="output"/>
+        <pin num="8" name="UART_DAT_O" type="output"/>
+        <pin num="9" name="UART_DAT_I" type="input"/>
+        <pin num="10" name="UART_ACK_I" type="input"/>
+        <pin num="11" name="UART_CTI_O" type="output"/>
+        <pin num="12" name="UART_BTE_O" type="output"/>
+        <pin num="13" name="RXDRY_N" type="output"/>
+        <pin num="14" name="TXRDY_N" type="output"/>
+        <pin num="15" name="MASTER_CYC_O" type="output"/>
+        <pin num="16" name="MASTER_WE_O" type="output"/>
+        <pin num="17" name="MASTER_SEL_O" type="output"/>
+        <pin num="18" name="MASTER_STB_O" type="output"/>
+        <pin num="19" name="MASTER_DATA_O" type="output"/>
+        <pin num="20" name="MASTER_ACK_I" type="output"/>
+        <pin num="21" name="SLAVE_CYC_I" type="input"/>
+        <pin num="22" name="SLAVE_WE_I" type="input"/>
+        <pin num="23" name="SLAVE_SEL_I" type="input"/>
+        <pin num="24" name="SLAVE_STB_I" type="input"/>
+        <pin num="25" name="SLAVE_DAT_I" type="input"/>
+        <pin num="26" name="SLAVE_ACK_O" type="output"/>
+        <pin num="27" name="SLAVE_STALL_O" type="output"/>
+        <pin num="28" name="INTR" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="interfaces" part="wb_df_slave_to_avalon_st_src">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">wb_df_slave_to_avalon_st_src</field>
+        <field name="Footprint">MODULE</field>
+        <field name="Datasheet">DOCUMENTATION</field>
+      </fields>
+      <pins>
+        <pin num="1" name="clk" type="input"/>
+        <pin num="2" name="reset_n" type="input"/>
+        <pin num="3" name="CYC_I" type="input"/>
+        <pin num="4" name="WE_I" type="input"/>
+        <pin num="5" name="SEL_I" type="input"/>
+        <pin num="6" name="STB_I" type="input"/>
+        <pin num="7" name="DAT_I" type="input"/>
+        <pin num="8" name="ACK_O" type="output"/>
+        <pin num="9" name="st_src_valid" type="output"/>
+        <pin num="10" name="st_src_data" type="output"/>
+        <pin num="11" name="st_src_ready" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="interfaces" part="as_to_wb_master">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">as_to_wb_master</field>
+        <field name="Footprint">MODULE</field>
+        <field name="Datasheet">DOCUMENTATION</field>
+      </fields>
+      <pins>
+        <pin num="1" name="clk" type="input"/>
+        <pin num="2" name="reset_n" type="input"/>
+        <pin num="3" name="as_address" type="input"/>
+        <pin num="4" name="as_read" type="input"/>
+        <pin num="5" name="as_write" type="input"/>
+        <pin num="6" name="as_byteenable" type="input"/>
+        <pin num="7" name="as_writedata" type="input"/>
+        <pin num="8" name="as_readdata" type="output"/>
+        <pin num="9" name="as_waitrequest" type="output"/>
+        <pin num="10" name="as_readdatavalid" type="output"/>
+        <pin num="11" name="CYC_O" type="output"/>
+        <pin num="12" name="WE_O" type="output"/>
+        <pin num="13" name="SEL_O" type="output"/>
+        <pin num="14" name="STB_O" type="output"/>
+        <pin num="15" name="ADR_O" type="output"/>
+        <pin num="16" name="DAT_O" type="output"/>
+        <pin num="17" name="DAT_I" type="input"/>
+        <pin num="18" name="ACK_I" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="interfaces" part="avalon_st_sink_to_wb_df_master_pipelined">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">avalon_st_sink_to_wb_df_master_pipelined</field>
+        <field name="Footprint">MODULE</field>
+        <field name="Datasheet">DOCUMENTATION</field>
+      </fields>
+      <pins>
+        <pin num="1" name="clk" type="input"/>
+        <pin num="2" name="reset_n" type="input"/>
+        <pin num="3" name="st_sink_valid" type="input"/>
+        <pin num="4" name="st_sink_data" type="input"/>
+        <pin num="5" name="st_sink_ready" type="output"/>
+        <pin num="6" name="CYC_O" type="output"/>
+        <pin num="7" name="WE_O" type="output"/>
+        <pin num="8" name="SEL_O" type="output"/>
+        <pin num="9" name="STB_O" type="output"/>
+        <pin num="10" name="DAT_O" type="output"/>
+        <pin num="11" name="ACK_I" type="input"/>
+        <pin num="12" name="STALL_I" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="interfaces">
+      <uri>Z:\HDL\KiCad\library\hdl\interfaces.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/SOUT">
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="2" name="/SIN">
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="3" name="/u5_out_valid">
+      <node ref="U5" pin="6"/>
+      <node ref="U4" pin="3"/>
+    </net>
+    <net code="4" name="/u6_readdata">
+      <node ref="U6" pin="8"/>
+      <node ref="U5" pin="14"/>
+    </net>
+    <net code="5" name="/u6_writedata">
+      <node ref="U6" pin="7"/>
+      <node ref="U5" pin="13"/>
+    </net>
+    <net code="6" name="/u6_byteenable">
+      <node ref="U6" pin="6"/>
+      <node ref="U5" pin="12"/>
+    </net>
+    <net code="7" name="/u6_write">
+      <node ref="U5" pin="11"/>
+      <node ref="U6" pin="5"/>
+    </net>
+    <net code="8" name="/u6_read">
+      <node ref="U6" pin="4"/>
+      <node ref="U5" pin="10"/>
+    </net>
+    <net code="9" name="/u6_address">
+      <node ref="U5" pin="9"/>
+      <node ref="U6" pin="3"/>
+    </net>
+    <net code="10" name="/u6_waitrequest">
+      <node ref="U5" pin="15"/>
+      <node ref="U6" pin="9"/>
+    </net>
+    <net code="11" name="/u6_readdatavalid">
+      <node ref="U5" pin="16"/>
+      <node ref="U6" pin="10"/>
+    </net>
+    <net code="12" name="/CYC_O">
+      <node ref="U6" pin="11"/>
+    </net>
+    <net code="13" name="/WE_O">
+      <node ref="U6" pin="12"/>
+    </net>
+    <net code="14" name="/SEL_O">
+      <node ref="U6" pin="13"/>
+    </net>
+    <net code="15" name="/STB_O">
+      <node ref="U6" pin="14"/>
+    </net>
+    <net code="16" name="/ADR_O">
+      <node ref="U6" pin="15"/>
+    </net>
+    <net code="17" name="/DAT_O">
+      <node ref="U6" pin="16"/>
+    </net>
+    <net code="18" name="/DAT_I">
+      <node ref="U6" pin="17"/>
+    </net>
+    <net code="19" name="/ACK_I">
+      <node ref="U6" pin="18"/>
+    </net>
+    <net code="20" name="/clk">
+      <node ref="U3" pin="1"/>
+      <node ref="U6" pin="1"/>
+      <node ref="U5" pin="1"/>
+      <node ref="U4" pin="1"/>
+      <node ref="U1" pin="1"/>
+      <node ref="U2" pin="1"/>
+    </net>
+    <net code="21" name="/reset_n">
+      <node ref="U6" pin="2"/>
+      <node ref="U5" pin="2"/>
+      <node ref="U3" pin="2"/>
+      <node ref="U4" pin="2"/>
+    </net>
+    <net code="22" name="/uart_intr">
+      <node ref="U2" pin="28"/>
+      <node ref="U1" pin="5"/>
+    </net>
+    <net code="23" name="/u2_stb">
+      <node ref="U4" pin="9"/>
+      <node ref="U2" pin="24"/>
+    </net>
+    <net code="24" name="/u5_out_data">
+      <node ref="U5" pin="7"/>
+      <node ref="U4" pin="4"/>
+    </net>
+    <net code="25" name="/u5_in_ready">
+      <node ref="U3" pin="11"/>
+      <node ref="U5" pin="5"/>
+    </net>
+    <net code="26" name="/u5_in_data">
+      <node ref="U3" pin="10"/>
+      <node ref="U5" pin="4"/>
+    </net>
+    <net code="27" name="/u5_in_valid">
+      <node ref="U3" pin="9"/>
+      <node ref="U5" pin="3"/>
+    </net>
+    <net code="28" name="/u2_stall">
+      <node ref="U2" pin="27"/>
+      <node ref="U4" pin="12"/>
+    </net>
+    <net code="29" name="/u2_ack">
+      <node ref="U4" pin="11"/>
+      <node ref="U2" pin="26"/>
+    </net>
+    <net code="30" name="/u2_dat">
+      <node ref="U4" pin="10"/>
+      <node ref="U2" pin="25"/>
+    </net>
+    <net code="31" name="/u5_out_ready">
+      <node ref="U4" pin="5"/>
+      <node ref="U5" pin="8"/>
+    </net>
+    <net code="32" name="/u2_sel">
+      <node ref="U4" pin="8"/>
+      <node ref="U2" pin="23"/>
+    </net>
+    <net code="33" name="/u2_we">
+      <node ref="U4" pin="7"/>
+      <node ref="U2" pin="22"/>
+    </net>
+    <net code="34" name="/u2_cyc">
+      <node ref="U4" pin="6"/>
+      <node ref="U2" pin="21"/>
+    </net>
+    <net code="35" name="/u3_ack">
+      <node ref="U2" pin="20"/>
+      <node ref="U3" pin="8"/>
+    </net>
+    <net code="36" name="/u3_dat">
+      <node ref="U3" pin="7"/>
+      <node ref="U2" pin="19"/>
+    </net>
+    <net code="37" name="/u3_stb">
+      <node ref="U2" pin="18"/>
+      <node ref="U3" pin="6"/>
+    </net>
+    <net code="38" name="/u3_sel">
+      <node ref="U2" pin="17"/>
+      <node ref="U3" pin="5"/>
+    </net>
+    <net code="39" name="/u3_we">
+      <node ref="U2" pin="16"/>
+      <node ref="U3" pin="4"/>
+    </net>
+    <net code="40" name="/reset">
+      <node ref="U1" pin="2"/>
+      <node ref="U2" pin="2"/>
+    </net>
+    <net code="41" name="/rxdry_n">
+      <node ref="U1" pin="16"/>
+      <node ref="U2" pin="13"/>
+    </net>
+    <net code="42" name="/txrdy_n">
+      <node ref="U2" pin="14"/>
+      <node ref="U1" pin="17"/>
+    </net>
+    <net code="43" name="/uart_bte">
+      <node ref="U2" pin="12"/>
+      <node ref="U1" pin="15"/>
+    </net>
+    <net code="44" name="/uart_cti">
+      <node ref="U2" pin="11"/>
+      <node ref="U1" pin="14"/>
+    </net>
+    <net code="45" name="/uart_ack">
+      <node ref="U2" pin="10"/>
+      <node ref="U1" pin="13"/>
+    </net>
+    <net code="46" name="/dat_from_uart">
+      <node ref="U2" pin="9"/>
+      <node ref="U1" pin="12"/>
+    </net>
+    <net code="47" name="/dat_to_uart">
+      <node ref="U1" pin="11"/>
+      <node ref="U2" pin="8"/>
+    </net>
+    <net code="48" name="/uart_adr">
+      <node ref="U1" pin="10"/>
+      <node ref="U2" pin="7"/>
+    </net>
+    <net code="49" name="/uart_stb">
+      <node ref="U1" pin="9"/>
+      <node ref="U2" pin="6"/>
+    </net>
+    <net code="50" name="/uart_sel">
+      <node ref="U1" pin="8"/>
+      <node ref="U2" pin="5"/>
+    </net>
+    <net code="51" name="/uart_we">
+      <node ref="U1" pin="7"/>
+      <node ref="U2" pin="4"/>
+    </net>
+    <net code="52" name="/uart_cyc">
+      <node ref="U1" pin="6"/>
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="53" name="/u3_cyc">
+      <node ref="U2" pin="15"/>
+      <node ref="U3" pin="3"/>
+    </net>
+  </nets>
+</export>

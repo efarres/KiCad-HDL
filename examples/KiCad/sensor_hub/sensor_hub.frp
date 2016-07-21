@@ -1,0 +1,148 @@
+.HEA
+.TIM 15/10/2015 15:44:50
+.APP "Eeschema (2015-07-06 BZR 5891, Git 351914d)-product"
+
+.ADD_COM     U4     "AVALON_ST_SINK_TO_WB_DF_MASTER_PIPELINED"
+.ADD_COM     U5     "ST_BYTES_TO_AM"
+.ADD_COM     U3     "WB_DF_SLAVE_TO_AVALON_ST_SRC"
+.ADD_COM     U2     "UART_CORE_TO_WB_DF"
+.ADD_COM     U1     "UART_CORE"
+.ADD_COM     U6     "AS_TO_WB_MASTER"
+
+
+.ADD_TER   U5   6     "/u5_out_valid"
+.TER       U4   3
+
+.ADD_TER   U6   8     "/u6_readdata"
+.TER       U5   14
+
+.ADD_TER   U6   7     "/u6_writedata"
+.TER       U5   13
+
+.ADD_TER   U6   6     "/u6_byteenable"
+.TER       U5   12
+
+.ADD_TER   U5   11     "/u6_write"
+.TER       U6   5
+
+.ADD_TER   U6   4     "/u6_read"
+.TER       U5   10
+
+.ADD_TER   U5   9     "/u6_address"
+.TER       U6   3
+
+.ADD_TER   U5   15     "/u6_waitrequest"
+.TER       U6   9
+
+.ADD_TER   U5   16     "/u6_readdatavalid"
+.TER       U6   10
+
+.ADD_TER   U3   1     "/clk"
+.TER       U6   1
+            U5   1
+            U4   1
+            U1   1
+            U2   1
+
+.ADD_TER   U6   2     "/reset_n"
+.TER       U5   2
+            U3   2
+            U4   2
+
+.ADD_TER   U2   28     "/uart_intr"
+.TER       U1   5
+
+.ADD_TER   U4   9     "/u2_stb"
+.TER       U2   24
+
+.ADD_TER   U5   7     "/u5_out_data"
+.TER       U4   4
+
+.ADD_TER   U3   11     "/u5_in_ready"
+.TER       U5   5
+
+.ADD_TER   U3   10     "/u5_in_data"
+.TER       U5   4
+
+.ADD_TER   U3   9     "/u5_in_valid"
+.TER       U5   3
+
+.ADD_TER   U2   27     "/u2_stall"
+.TER       U4   12
+
+.ADD_TER   U4   11     "/u2_ack"
+.TER       U2   26
+
+.ADD_TER   U4   10     "/u2_dat"
+.TER       U2   25
+
+.ADD_TER   U4   5     "/u5_out_ready"
+.TER       U5   8
+
+.ADD_TER   U4   8     "/u2_sel"
+.TER       U2   23
+
+.ADD_TER   U4   7     "/u2_we"
+.TER       U2   22
+
+.ADD_TER   U4   6     "/u2_cyc"
+.TER       U2   21
+
+.ADD_TER   U2   20     "/u3_ack"
+.TER       U3   8
+
+.ADD_TER   U3   7     "/u3_dat"
+.TER       U2   19
+
+.ADD_TER   U2   18     "/u3_stb"
+.TER       U3   6
+
+.ADD_TER   U2   17     "/u3_sel"
+.TER       U3   5
+
+.ADD_TER   U2   16     "/u3_we"
+.TER       U3   4
+
+.ADD_TER   U1   2     "/reset"
+.TER       U2   2
+
+.ADD_TER   U1   16     "/rxdry_n"
+.TER       U2   13
+
+.ADD_TER   U2   14     "/txrdy_n"
+.TER       U1   17
+
+.ADD_TER   U2   12     "/uart_bte"
+.TER       U1   15
+
+.ADD_TER   U2   11     "/uart_cti"
+.TER       U1   14
+
+.ADD_TER   U2   10     "/uart_ack"
+.TER       U1   13
+
+.ADD_TER   U2   9     "/dat_from_uart"
+.TER       U1   12
+
+.ADD_TER   U1   11     "/dat_to_uart"
+.TER       U2   8
+
+.ADD_TER   U1   10     "/uart_adr"
+.TER       U2   7
+
+.ADD_TER   U1   9     "/uart_stb"
+.TER       U2   6
+
+.ADD_TER   U1   8     "/uart_sel"
+.TER       U2   5
+
+.ADD_TER   U1   7     "/uart_we"
+.TER       U2   4
+
+.ADD_TER   U1   6     "/uart_cyc"
+.TER       U2   3
+
+.ADD_TER   U2   15     "/u3_cyc"
+.TER       U3   3
+
+.END

@@ -1,2 +1,2 @@
-# Kicad-HDL
-Tools to convert Kicad intermediate netlist to HDL block diagram netlist
+# KiCad-HDL
+Tools to convert KiCad intermediate netlist to HDL block diagram netlist.
